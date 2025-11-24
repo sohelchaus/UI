@@ -1,0 +1,51 @@
+/* Certification Section */
+.certification-section {
+  width: 100vw;
+  padding: 40px 20px;
+  background: #f0f4f8;
+  text-align: center;
+}
+
+.certification-section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Swiper Container */
+.swiper {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Slides */
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide a {
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.swiper-slide a:hover {
+  transform: scale(1.05);
+}
+
+/* Certificate Images */
+.swiper-slide img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation Buttons */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #ffcc20;
+}
