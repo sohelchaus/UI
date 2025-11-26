@@ -1,0 +1,208 @@
+/* --------- */
+/* SKILLS TAB*/
+/* --------- */
+#skills {
+    background: #1b1d1a;
+    border-radius: 0.5rem;
+    padding: 1.2rem 2rem;
+}
+
+/* -------------- */
+/* SKILL PROGRESS */
+/* -------------- */
+.progress-bar-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: calc(100% - 2rem);
+    margin: 1rem;
+    font-family: monospace;
+}
+
+.progress-bar {
+    width: calc(50% - 1rem);
+    display: flex;
+    align-items: center;
+    margin: 0.5rem;
+    gap: 1rem;
+}
+
+.progress-bar i {
+    margin-top: 1rem;
+    font-size: 2rem;
+}
+
+.progress-detail {
+    flex: 1;
+}
+
+.progress-title {
+    margin: 0 0 5px 0;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.bar {
+    width: 100%;
+    background-color: #333333;
+    color: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    height: 1.5rem;
+}
+
+.fill {
+    display: flex;
+    align-items: center;
+    padding: 0 0.5rem;
+    font-weight: bold;
+    height: 100%;
+    width: 0;
+    border-radius: 1rem;
+    color: #1c1c1c;
+    background-color: #ffcc29;
+    animation: fillBar 2s forwards;
+}
+
+@keyframes fillBar {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: var(--progress);
+    }
+}
+
+/* ----------------- */
+/* CERTIFICATION TAB */
+/* ----------------- */
+#certification {
+    background: #1b1d1a;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.certification-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.certification {
+    background: #1b1d1a;
+    color: white;
+    display: none;
+    gap: 1.5rem;
+    border-radius: 0.5rem;
+    font-family: monospace;
+}
+
+.certification.active {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+}
+
+.cert-title {
+    font-size: clamp(0.6rem, 0.8vw + 0.5rem, 1rem);
+    margin: 1rem 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+.cert-slider {
+    width: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 0.5rem;
+    cursor: pointer;
+    user-select: none;
+    z-index: 10;
+}
+
+.prev-btn {
+    left: 0;
+}
+
+.next-btn {
+    right: 0;
+}
+
+.cert-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.cert-detail {
+    width: calc(50% - 2rem);
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    padding: 1rem;
+    font-size: 0.8rem;
+}
+
+.cert-detail p {
+    font-size: clamp(0.5rem, 0.7vw + 0.3, 1rem);
+}
+
+/* ------------ */
+/* EDUCATION TAB*/
+/* ------------ */
+#education {
+    background: #1b1d1a;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+}
+
+.ed-container {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.ed-container img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.ed-content {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: calc(40% - 4rem);
+    height: 100%;
+    padding: 2rem;
+    font-size: clamp(0.6rem, 0.8vw + 0.5rem, 1rem);
+    border-radius: 0.5rem;
+    color: white;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.ed-content span {
+    font-weight: bold;
+    color: #ffcc29;
+}

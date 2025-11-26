@@ -1,0 +1,182 @@
+<!------------------->
+        <!-- ABOUT SECTION -->
+        <!------------------->
+        <div class="about-title">
+            <h2>About</h2>
+            <P>WHAT MY <span id="about-paragraph">ABOUT</span> SAY’S</P>
+        </div>
+        <section id="about">
+            <div class="about-container">
+                <!-- LEFT - ABOUT CONTAINER -->
+                <div class="about-left">
+                    <img src="images/profile-01.webp" alt="Sohel Chaus">
+                </div>
+
+                <!-- RIGHT - ABOUT CONTAINER -->
+                <div class="about-right">
+                    <!------------->
+                    <!-- TAB BAR -->
+                    <!------------->
+                    <div class="tabs">
+                        <button class="tab-link active" onclick="openTab(event, 'skills')">Skills</button>
+                        <button class="tab-link" onclick="openTab(event, 'certification')">Certification</button>
+                        <button class="tab-link" onclick="openTab(event, 'education')">Education</button>
+                    </div>
+                    <!-- ----------------------->
+                    <!-- SKILLS / TAB CONTENT -->
+                    <!-- ----------------------->
+                    <div class="tab-content active" id="skills">
+                        <div class="progress-bar-container">
+                            <!-- SKILL ONE -->
+                            <div class="progress-bar">
+                                <i class="fa-brands fa-html5" style="color: #ffffff;"></i>
+                                <div class="progress-detail">
+                                    <p class="progress-title">HTML</p>
+                                    <div class="bar">
+                                        <div class="fill" style="--progress: 70%">70%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- SKILL TWO -->
+                            <div class="progress-bar">
+                                <i class="fa-brands fa-css" style="color: #ffffff;"></i>
+                                <div class="progress-detail">
+                                    <p class="progress-title">CSS</p>
+                                    <div class="bar">
+                                        <div class="fill" style="--progress: 60%">60%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- SKILL THREE -->
+                            <div class="progress-bar">
+                                <i class="fa-brands fa-square-js" style="color: #ffffff;"></i>
+                                <div class="progress-detail">
+                                    <p class="progress-title">JS</p>
+                                    <div class="bar">
+                                        <div class="fill" style="--progress: 40%">40%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- SKILL FOUR -->
+                            <div class="progress-bar">
+                                <i class="fa-solid fa-database" style="color: #ffffff;"></i>
+                                <div class="progress-detail">
+                                    <p class="progress-title">Database</p>
+                                    <div class="bar">
+                                        <div class="fill" style="--progress: 50%">50%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- SKILL FIVE -->
+                            <div class="progress-bar">
+                                <i class="fa-brands fa-windows" style="color: #ffffff;"></i>
+                                <div class="progress-detail">
+                                    <p class="progress-title">Office</p>
+                                    <div class="bar">
+                                        <div class="fill" style="--progress: 80%">80%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--------------------------------->
+                    <!-- CERTIFICATION / TAB CONTENT -->
+                    <!--------------------------------->
+                    <div class="tab-content" id="certification">
+                        <div class="certification-container">
+
+                            <div class="certification active">
+                                <div class="cert-slider">
+                                    <button class="slider-btn prev-btn" onclick="prevSlide()">❮</button>
+                                    <img src="images/cft-01.webp" class="cert-image" id="slide"
+                                        alt="Project Management">
+                                    <button class="slider-btn next-btn" onclick="nextSlide()">❯</button>
+                                </div>
+
+                                <div class="cert-detail">
+                                    <h2>Project Management</h2>
+                                    <p>&emsp;&emsp;&emsp;Successfully completed LinkedIn Learning’s Project Management
+                                        course—gaining practical strategies to lead, plan, and deliver projects.</p>
+                                </div>
+                            </div>
+
+                            <div class="certification">
+                                <div class="cert-slider">
+                                    <button class="slider-btn prev-btn" onclick="prevSlide()">❮</button>
+                                    <img src="images/cft-02.webp" class="cert-image" id="slide" alt="Css Basics">
+                                    <button class="slider-btn next-btn" onclick="nextSlide()">❯</button>
+                                </div>
+
+                                <div class="cert-detail">
+                                    <h2>CSS Basics</h2>
+                                    <p>&emsp;&emsp;&emsp;I am certified in the fundamentals of CSS, including styling
+                                        web pages, creating clean layouts, and improving user experience.</p>
+                                </div>
+                            </div>
+
+                            <div class="certification">
+                                <div class="cert-slider">
+                                    <button class="slider-btn prev-btn" onclick="prevSlide()">❮</button>
+                                    <img src="images/cft-03.webp" class="cert-image" id="slide" alt="Web Design">
+                                    <button class="slider-btn next-btn" onclick="nextSlide()">❯</button>
+                                </div>
+
+                                <div class="cert-detail">
+                                    <h2>Web Design</h2>
+                                    <p>&emsp;&emsp;&emsp;I'm certified in basic web design. This includes understanding
+                                        layout principles, using HTML & CSS effectively and design user-friendly
+                                        webpages.</p>
+                                </div>
+                            </div>
+
+                            <div class="certification">
+                                <div class="cert-slider">
+                                    <button class="slider-btn prev-btn" onclick="prevSlide()">❮</button>
+                                    <img src="images/cft-04.webp" class="cert-image" id="slide" alt="Eng">
+                                    <button class="slider-btn next-btn" onclick="nextSlide()">❯</button>
+                                </div>
+
+                                <div class="cert-detail">
+                                    <h2>English Basics</h2>
+                                    <p>&emsp;&emsp;&emsp;I am certified in foundational English skills through Skill
+                                        India Digital Hub. This includes basic grammar, vocabulary, sentence formation.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="certification">
+                                <div class="cert-slider">
+                                    <button class="slider-btn prev-btn" onclick="prevSlide()">❮</button>
+                                    <img src="images/cft-05.webp" class="cert-image" id="slide" alt="Typing">
+                                    <button class="slider-btn next-btn" onclick="nextSlide()">❯</button>
+                                </div>
+
+                                <div class="cert-detail">
+                                    <h2>Typing</h2>
+                                    <p>&emsp;&emsp;&emsp;I am certified in English typing fundamentals. I can type
+                                        accurately and apply basic formatting to documents.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!----------------------------->
+                    <!-- EDUCATION / TAB CONTENT -->
+                    <!----------------------------->
+                    <div class="tab-content" id="education">
+                        <div class="ed-container">
+                            <img src="images/college.webp" alt="Thumbnail">
+                            <div class="ed-content">
+                                <p><span>Degree:</span> Bachelor’s In Computer Applications</p>
+                                <p><span>Field:</span> Computer Science</p>
+                                <p><span>College:</span> Yeshwant College of Information Technology</p>
+                                <p><span>Duration:</span> 2023-2025</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
