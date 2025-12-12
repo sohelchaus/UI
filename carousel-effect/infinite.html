@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Infinite Carousel</title>
+
+  <style>
+    html {
+      font-size: 16px;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f0f0f0;
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .carousel {
+      width: 100%;
+      max-width: 90%;
+      overflow: hidden;
+      padding: 0 2rem;
+      box-sizing: border-box;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease;
+      gap: 2rem;
+    }
+
+    .carousel-card {
+      flex: 0 0 70%;
+      transform: scale(0.85);
+      opacity: 0.6;
+      transition: transform 0.4s ease, opacity 0.4s ease;
+      z-index: 1;
+    }
+
+    .carousel-card.active {
+      transform: scale(1);
+      opacity: 1;
+      z-index: 2;
+    }
+
+    .carousel-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 0.5rem;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="carousel">
+    <div class="carousel-track" id="track">
+      <div class="carousel-card"><img src="sample.jpg" alt="Image 1"></div>
+      <div class="carousel-card active"><img src="sample.jpg" alt="Image 2"></div>
+      <div class="carousel-card"><img src="sample.jpg" alt="Image 3"></div>
+      <div class="carousel-card"><img src="sample.jpg" alt="Image 4"></div>
+    </div>
+  </div>
+
+  <script>
+    const track = document.getElementById('track');
+    const cards = Array.from(document.querySelectorAll('.carousel-card'));
+    let currentIndex = 1;
+
+    function updateCarousel() {
+      cards.forEach((card, i) => {
+        card.classList.toggle('active', i === currentIndex);
+      });
+
+      const cardWidth = cards[currentIndex].offsetWidth + 32;
+      const containerWidth = document.querySelector('.carousel').offsetWidth;
+      const offset = cardWidth * currentIndex - (containerWidth - cardWidth) / 2;
+      track.style.transform = `translateX(-${offset}px)`;
+    }
+
+    let startX = 0;
+    track.addEventListener('touchstart', e => {
+      startX = e.touches[0].clientX;
+    });
+    track.addEventListener('touchend', e => {
+      const endX = e.changedTouches[0].clientX;
+      if (endX < startX - 30) {
+        currentIndex = (currentIndex + 1) % cards.length;
+      } else if (endX > startX + 30) {
+        currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+      }
+      updateCarousel();
+    });
+
+    window.addEventListener('load', updateCarousel);
+    window.addEventListener('resize', updateCarousel);
+
+  </script>
+</body>
+
+</html>

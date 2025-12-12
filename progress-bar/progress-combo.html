@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SVG Circular Progress</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      background-color: #ffffff;
+      color: #1b1d1a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 16px;
+    }
+
+    .skill {
+      width: 160px;
+      height: 160px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .outer {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      padding: 20px;
+      box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+        -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+    }
+
+    .inner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
+        inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
+        -0.5px -0.5px 0px rgba(255, 255, 255, 1),
+        0.5px 0.5px 0 rgba(0, 0, 0, 0.15),
+        0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+    }
+
+    #number {
+      font-weight: 600;
+      font-size: 30px;
+    }
+
+    svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    circle {
+      fill: none;
+      stroke: url(#GradientColor);
+      stroke-width: 20px;
+      stroke-dasharray: 440;
+      /* circumference ~ 2πr */
+      stroke-dashoffset: 440;
+      /* start hidden */
+      transition: stroke-dashoffset 1s ease;
+    }
+
+    .label {
+      margin-top: 10px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 500;
+      color: #333;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="skill">
+    <div class="Progress-bar">
+      <div class="outer">
+        <div class="inner">
+          <div id="number">65%</div>
+        </div>
+      </div>
+      <svg width="160" height="160">
+        <defs>
+          <linearGradient id="GradientColor">
+            <stop offset="0%" stop-color="#ffcc29" />
+            <stop offset="100%" stop-color="#ff5733" />
+          </linearGradient>
+        </defs>
+        <circle cx="80" cy="80" r="70"></circle>
+      </svg>
+    </div>
+    <div class="label" id="skill-label">HTML</div>
+  </div>
+
+  <script>
+    function setProgress(percent, labelText) {
+      const numberEl = document.getElementById("number");
+      const circle = document.querySelector("circle");
+      const labelEl = document.getElementById("skill-label");
+
+      // Update text
+      numberEl.innerText = percent + "%";
+      labelEl.innerText = labelText;
+
+      // Circle math
+      const radius = circle.r.baseVal.value; // 70px
+      const circumference = 2 * Math.PI * radius;
+
+      circle.style.strokeDasharray = circumference;
+      const offset = circumference - (percent / 100) * circumference;
+      circle.style.strokeDashoffset = offset;
+    }
+
+    // Example usage
+    setTimeout(() => {
+      setProgress(20, "CSS");
+    }, 2000);
+
+    setTimeout(() => {
+      setProgress(85, "JavaScript");
+    }, 4000);
+
+  </script>
+</body>
+
+</html>

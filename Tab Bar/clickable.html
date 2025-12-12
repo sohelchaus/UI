@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Standard Tab Bar</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            scroll-behavior: auto;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="tabs">
+        <button class="tab-link active" onclick="openTab(event, 'skills')">Skills</button>
+        <button class="tab-link" onclick="openTab(event, 'certification')">Certification</button>
+        <button class="tab-link" onclick="openTab(event, 'education')">Education</button>
+    </div>
+</body>
+
+</html>

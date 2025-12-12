@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divider With Label</title>
+    <style>
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 2rem 0;
+        }
+
+        .label {
+            font-size: 1rem;
+            position: relative;
+            padding: 0.6rem 1rem;
+            clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%);
+            color: white;
+            background-color: #312020;
+        }
+
+        .line {
+            flex-grow: 1;
+            height: 2px;
+            background-color: #312020;
+        }
+    </style>
+</head>
+<body>
+    <div class="divider">
+        <span class="label">RECOMMENDED</span>
+        <span class="line"></span>
+    </div>
+</body>
+</html>

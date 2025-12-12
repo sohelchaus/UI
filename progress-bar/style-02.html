@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Bar - By SohelChaus</title>
+    <style>
+        .skills {
+            width: 50%;
+            margin: 1rem auto;
+            font-family: monospace;
+        }
+
+        .skills h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .skill {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .skill img {
+            width: 2rem;
+            height: 2rem;
+        }
+
+        .skill span {
+            width: 1.5rem;
+            font-weight: bold;
+        }
+
+        .bar {
+            flex-grow: 1;
+            height: 1rem;
+            background-color: #1c1c1c;
+            color: white;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            margin: 0 1rem;
+        }
+
+        .progress {
+            height: 100%;
+            background-color: yellow;
+            border-radius: 0.5rem 0 0 0.5rem;
+            transition: width 1s ease-in-out;
+        }
+
+        .percent {
+            min-width: 1.5rem;
+            text-align: right;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="skills">
+        <h2>HTML</h2>
+
+        <div class="skill">
+            <img src="images/html.png" alt="HTML">
+            <span>HTML</span>
+            <div class="bar">
+                <div class="progress"></div>
+            </div>
+            <span class="percentage">80%</span>
+        </div>
+    </div>
+</body>
+
+</html>

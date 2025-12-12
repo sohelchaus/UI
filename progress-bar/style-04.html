@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Progress Bar - SohelChaus</title>
+    <style>
+
+        .progress-bar-container {
+            width: 50%;
+            margin: 2rem auto;
+            font-family: monospace;
+        }
+
+        .progress-bar {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .progress-bar img {
+            margin-top: 1rem;
+            width: 2rem;
+            height: 2rem;
+        }
+
+        .progress-detail {
+            flex: 1;
+        }
+
+        .progress-title {
+            margin: 0 0 5px 0;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+        
+        .bar {
+            width: 100%;
+            background-color: #1c1c1c;
+            color: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            height: 1.5rem;
+        }
+
+        .fill {
+            background-color: #00ff1a;
+            color: #1c1c1c;
+            font-weight: bold;
+            height: 100%;
+            width: 0;
+            border-radius: 1rem;
+            animation: fillBar 2s forwards;
+        }
+
+        @keyframes fillBar {
+            from {
+                width: 0;
+            }
+            to {
+                width: var(--progress);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar-container">
+        <div class="progress-bar">
+            <img src="images/html.png" alt="HTML">
+
+            <div class="progress-detail">
+                <p class="progress-title">HTML</p>
+                <div class="bar">
+                    <div class="fill" style="--progress: 70%">70%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

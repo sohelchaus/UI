@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Typing Effect</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                overflow-x: hidden;
+                scroll-behavior: auto;
+            }
+
+            body {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            h2 {
+                width: 20ch;
+                text-wrap: nowrap;
+                overflow: hidden;
+                animation: typing 2s steps(20) infinite alternate-reverse;
+            }
+
+            @keyframes typing {
+                from {
+                    width: 0ch;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Ya Marhaba</h2>
+    </body>
+</html>

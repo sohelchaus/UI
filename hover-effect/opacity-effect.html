@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Hover Effect</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            scroll-behavior: auto;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .wrapper {
+            height: 50vh;
+            width: 50vw;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 6px solid white;
+        }
+
+        .wrapper img {
+            height: 100%;
+            width: 100%;
+            border-radius: 20px;
+            filter: grayscale(100%);
+            transition: 0.5s ease-in;
+            cursor: pointer;
+        }
+
+        .wrapper img:hover {
+            transform: scale(1.2);
+            filter: grayscale(0);
+            zoom: 10%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <img src="S:\XAMPP\htdocs\UI\assets\subject.jpg" alt="thumbnail">
+    </div>
+</body>
+
+</html>

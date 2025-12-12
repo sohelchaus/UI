@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Autoplay Carousel</title>
+
+  <style>
+    html {
+      font-size: 16px;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f0f0f0;
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .carousel {
+      width: 100%;
+      max-width: 90%;
+      overflow: hidden;
+      padding: 0 2rem;
+      box-sizing: border-box;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease;
+      gap: 2rem;
+    }
+
+    .carousel-slide {
+      flex: 0 0 70%;
+      transform: scale(0.85);
+      opacity: 0.6;
+      transition: transform 0.4s ease, opacity 0.4s ease;
+      z-index: 1;
+    }
+
+    .carousel-slide.active {
+      transform: scale(1);
+      opacity: 1;
+      z-index: 2;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 0.5rem;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="carousel">
+    <div class="carousel-track" id="track">
+      <div class="carousel-slide"><img src="assets.jpg" alt="Image 1"></div>
+      <div class="carousel-slide active"><img src="assets.jpg" alt="Image 2"></div>
+      <div class="carousel-slide"><img src="assets.jpg" alt="Image 3"></div>
+      <div class="carousel-slide"><img src="assets.jpg" alt="Image 4"></div>
+    </div>
+  </div>
+
+  <script>
+    const track = document.getElementById('track');
+    const slides = Array.from(document.querySelectorAll('.carousel-slide'));
+    let currentIndex = 1;
+    let autoplayInterval;
+
+    function updateCarousel() {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === currentIndex);
+      });
+
+      const slideWidth = slides[currentIndex].offsetWidth + 32;
+      const containerWidth = document.querySelector('.carousel').offsetWidth;
+      const offset = slideWidth * currentIndex - (containerWidth - slideWidth) / 2;
+      track.style.transform = `translateX(-${offset}px)`;
+    }
+
+    function startAutoplay() {
+      autoplayInterval = setInterval(() => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateCarousel();
+      }, 3000);
+    }
+
+    function stopAutoplay() {
+      clearInterval(autoplayInterval);
+    }
+
+    let startX = 0;
+    track.addEventListener('touchstart', e => {
+      stopAutoplay();
+      startX = e.touches[0].clientX;
+    });
+    track.addEventListener('touchend', e => {
+      const endX = e.changedTouches[0].clientX;
+      if (endX < startX - 30) {
+        currentIndex = (currentIndex + 1) % slides.length;
+      } else if (endX > startX + 30) {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      }
+      updateCarousel();
+      startAutoplay();
+    });
+
+    window.addEventListener('load', () => {
+      updateCarousel();
+      startAutoplay();
+    });
+    window.addEventListener('resize', updateCarousel);
+
+  </script>
+</body>
+
+</html>
